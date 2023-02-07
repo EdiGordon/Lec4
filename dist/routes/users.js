@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { Router } from "express";
+import jwt from "jsonwebtoken";
+import authConfig from "../db/config/auth.config.js";
 import _ from "underscore";
 import { User } from "../db/models/user.js";
 import { validateSignUp } from "../middleware/verifySignupBody.js";
@@ -24,7 +26,7 @@ router.post("/signup", validateSignUp, userAlreadyExists, (req, res) => __awaite
     //before saving the user:
     try {
         //for each user -> save the role id of user
-        user.roles = [yield (yield Role.findOne({ name: 'user' }))._id];
+        user.roles = [yield (yield Role.findOne({ name: "user" }))._id];
         yield user.save();
         return res.json({ message: "user saved", id: user._id });
     }
@@ -45,7 +47,12 @@ router.post("/signin", validateSignIn, (req, res) => __awaiter(void 0, void 0, v
         if (!isPasswordValid) {
             return res.status(401).json({ message: "Invalid Credentials" });
         }
-        return res.status(200).json({ message: "Sign in succesfull" });
+        const token = jwt.sign({ id: user._id }, authConfig.secret, {
+            expiresIn: "30d",
+        });
+        return res
+            .status(200)
+            .json({ message: "Sign in succesfull", token: token });
     }
     catch (e) { }
 }));
