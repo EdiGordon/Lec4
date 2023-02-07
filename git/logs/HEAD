@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 8d59bdb33ff40b6a0291d8d9d7157ffbf4beaa4c BuTomer <bu.tomer@gmail.com> 1675321962 +0200	commit (initial): lec4
+8d59bdb33ff40b6a0291d8d9d7157ffbf4beaa4c eec3f061cd06bc554ef75e84d236b48dcb96f07b BuTomer <bu.tomer@gmail.com> 1675322280 +0200	commit: added git ignore
+eec3f061cd06bc554ef75e84d236b48dcb96f07b 3d1d93dd7f627e14540afc72a9f743c500b05d72 BuTomer <bu.tomer@gmail.com> 1675325198 +0200	commit: added student routes and models
+3d1d93dd7f627e14540afc72a9f743c500b05d72 f02ae5e606607bbbf0d4208247cf4d61392925d7 BuTomer <bu.tomer@gmail.com> 1675339104 +0200	commit: cors middlware
+f02ae5e606607bbbf0d4208247cf4d61392925d7 4d89dd98e2409dd0254dd8b516721b315178ff15 BuTomer <bu.tomer@gmail.com> 1675339897 +0200	commit: handle errors
+4d89dd98e2409dd0254dd8b516721b315178ff15 7450e19e33b76ef1623bbce8c5b2a6e15bfc0604 BuTomer <bu.tomer@gmail.com> 1675346809 +0200	commit: cards
