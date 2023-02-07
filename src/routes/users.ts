@@ -53,10 +53,10 @@ router.post("/signin", validateSignIn, async (req, res) => {
         const token = jwt.sign({ id: user._id }, authConfig.secret, {
             expiresIn: "30d",
         });
-        return res
-            .status(200)
-            .json({ message: "Sign in succesfull", token: token });
-    } catch (e) { }
+        return res.status(200).json({ message: "Sign in succesfull", token });
+    } catch (e) {
+        return res.status(500).json({ message: "Server error", error: e });
+    }
 });
 
 export { router as authRouter };

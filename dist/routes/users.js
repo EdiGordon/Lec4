@@ -50,10 +50,10 @@ router.post("/signin", validateSignIn, (req, res) => __awaiter(void 0, void 0, v
         const token = jwt.sign({ id: user._id }, authConfig.secret, {
             expiresIn: "30d",
         });
-        return res
-            .status(200)
-            .json({ message: "Sign in succesfull", token: token });
+        return res.status(200).json({ message: "Sign in succesfull", token });
     }
-    catch (e) { }
+    catch (e) {
+        return res.status(500).json({ message: "Server error", error: e });
+    }
 }));
 export { router as authRouter };
