@@ -47,7 +47,7 @@ Content-Type: application/json
 }
 
 
-###POST to add a student sign up:
+###POST to add student sign up:
 POST http://localhost:3001/api/auth/signup
 Content-Type: application/json
 
@@ -60,8 +60,10 @@ Content-Type: application/json
 ###POST to sign in user:
 POST http://localhost:3001/api/auth/signin
 Content-Type: application/json
+Authorization: YOUR_JWT_TOKEN
 
 {
     "email":"Ed@Batcave.com",
     "password":"edBu@123!g"
 }
+
