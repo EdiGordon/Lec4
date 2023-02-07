@@ -9,7 +9,10 @@ import { authRouter } from "./routes/users.js";
 // import { studentsRouter } from "./routes/students.js";
 const app = express();
 //middlewares:
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({
+    origin: 'http://localhost:3000',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.json());
 app.use(morgan("dev"));
 connect().catch((e) => {
