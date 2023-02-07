@@ -13,8 +13,17 @@ GET http://localhost:3001/api/login
 
 
 ###
-GET http://localhost:3001/api/books/fantasy
+GET http://localhost:3001/api/books/all
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTIwYTc2OTU1OTQyMjVjN2JkODdlYyIsImlhdCI6MTY3NTc3NTQ1MSwiZXhwIjoxNjc4MzY3NDUxfQ.yYWM1jPb7JBREGdLIwCEsuWwyWI_yRSdIaL_Y6UE0lg
 
+###
+GET http://localhost:3001/api/books/fantasy
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTIwYTc2OTU1OTQyMjVjN2JkODdlYyIsImlhdCI6MTY3NTc3NTQ1MSwiZXhwIjoxNjc4MzY3NDUxfQ.yYWM1jPb7JBREGdLIwCEsuWwyWI_yRSdIaL_Y6UE0lg
+
+
+###
+GET http://localhost:3001/api/books/mod
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTIwYTc2OTU1OTQyMjVjN2JkODdlYyIsImlhdCI6MTY3NTc3NTQ1MSwiZXhwIjoxNjc4MzY3NDUxfQ.yYWM1jPb7JBREGdLIwCEsuWwyWI_yRSdIaL_Y6UE0lg
 
 ### POST to add a card:
 POST http://localhost:3001/api/cards
@@ -47,6 +56,8 @@ Content-Type: application/json
 }
 
 
+
+
 ###POST to add student sign up:
 POST http://localhost:3001/api/auth/signup
 Content-Type: application/json
@@ -67,3 +78,4 @@ Authorization: YOUR_JWT_TOKEN
     "password":"edBu@123!g"
 }
 
+# דבר ראשון עושים לוגין , מקבלים טוקן ואחרי זה מוסיפים אותו לגאט באוטורזישן

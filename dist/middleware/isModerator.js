@@ -9,23 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { Role } from "../db/models/role.js";
 import { User } from "../db/models/user.js";
-const isAdmin = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+const isModerator = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const userId = req.userId;
     try {
         const user = yield User.findById(userId);
-        //user.roles = ['120231005fc', '120231005fa', '120231005fb']
-        //~populate
         const roles = yield Role.find({ _id: { $in: user.roles } });
         for (let role of roles) {
-            if (role.name === "admin") {
+            if (role.name === "moderator") {
                 return next();
             }
         }
-        return res.status(403).json({ message: "Requires Admin Role" });
+        return res.status(403).json({ message: "Requires moderator Role" });
     }
     catch (e) {
-        return res.status(500).json({ message: "Requires Admin Role", error: e });
+        return res
+            .status(500)
+            .json({ message: "Requires moderator Role", error: e });
     }
-    //find the user role => if admin =>
 });
-export { isAdmin };
+export { isModerator };
